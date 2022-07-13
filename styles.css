@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslategray;
+}
+
+.calc-container {
+    background-color: white;
+}
+
+.calc-display {
+    height: 20px;
+    background-color: grey;
+}
+
+button {
+    font-size: 3rem;
+}
