@@ -1,3 +1,46 @@
+const numberButtons = document.querySelectorAll(".number-button");
+const operatorButtons = document.querySelectorAll(".operator-button");
+const decimalButton = document.querySelector(".decimal-button");
+const equalButton = document.querySelector(".equal-button");
+const clearButton = document.querySelector(".clear-button");
+const deleteButton = document.querySelector(".delete-button");
+const displayNumber = document.querySelector(".display");
+
+// Event listeners
+numberButtons.forEach((btn) =>
+    btn.addEventListener("click", () => appendNumberScreen(btn.textContent))
+);
+
+operatorButtons.forEach((btn) =>
+    btn.addEventListener("click", () => console.log(btn.textContent))
+);
+
+clearButton.addEventListener("click", clearDisplay);
+deleteButton.addEventListener("click", deleteNumber);
+
+// Functions
+function appendNumberScreen(number) {
+    if (displayNumber.textContent === "0") {
+        displayNumber.textContent = "";
+    }
+    displayNumber.textContent += number;
+}
+
+function clearDisplay() {
+    displayNumber.textContent = "0";
+}
+
+function deleteNumber() {
+    // Removing last number hides the display, can hit a number to bring back
+    //displayNumber.textContent = displayNumber.textContent.slice(0, -1);
+    if (displayNumber.textContent === "") {
+        // some shit
+    }
+    console.log(displayNumber.textContent);
+    displayNumber.textContent = displayNumber.textContent.slice(0, -1);
+    console.log(displayNumber.textContent);
+}
+
 const add = (a, b) => {
     return a + b;
 };
