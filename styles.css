@@ -1,3 +1,12 @@
+:root {
+    --border: 1.5px solid black;
+    --background: rgb(47, 79, 79);
+    --calc-bg: rgb(96, 184, 184);
+    --display-bg: rgb(155, 151, 151);
+    --button-bg: rgb(199, 228, 228);
+    --button-hover: rgb(153, 177, 177);
+}
+
 *,
 *::before,
 *::after {
@@ -7,28 +16,36 @@
 }
 
 body {
-    background-color: darkslategray;
+    background-color: var(--background);
 }
 
 .calc-container {
     display: flex;
+    margin-top: 20vh;
     justify-content: center;
     align-items: center;
 }
 
 .calculator {
     width: 350px;
+    padding: 15px;
+    background-color: var(--calc-bg);
+    border: var(--border);
 }
 
 .display {
-    background-color: rgba(207, 107, 107, 0.815);
+    background-color: var(--display-bg);
     text-align: end;
     font-size: 2.5rem;
+    margin-bottom: 10px;
+    padding-right: 0.5rem;
+    border: var(--border);
 }
 
 .button-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
 }
 
 .span {
@@ -37,4 +54,12 @@ body {
 
 button {
     font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    border: var(--border);
+    background-color: var(--button-bg);
+}
+
+button:hover {
+    background-color: var(--button-hover);
 }
