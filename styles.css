@@ -1,5 +1,9 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -7,14 +11,30 @@ body {
 }
 
 .calc-container {
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.calc-display {
-    height: 20px;
-    background-color: grey;
+.calculator {
+    width: 350px;
+}
+
+.display {
+    background-color: rgba(207, 107, 107, 0.815);
+    text-align: end;
+    font-size: 2.5rem;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.span {
+    grid-column: span 2;
 }
 
 button {
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
