@@ -21,7 +21,7 @@ deleteButton.addEventListener("click", deleteNumber);
 // Functions
 function appendNumberScreen(number) {
     if (displayNumber.textContent === "0") {
-        displayNumber.textContent = "";
+        displayNumber.textContent = ""; // Removes leading 0
     }
     displayNumber.textContent += number;
 }
@@ -31,14 +31,7 @@ function clearDisplay() {
 }
 
 function deleteNumber() {
-    // Removing last number hides the display, can hit a number to bring back
-    //displayNumber.textContent = displayNumber.textContent.slice(0, -1);
-    if (displayNumber.textContent === "") {
-        // some shit
-    }
-    console.log(displayNumber.textContent);
     displayNumber.textContent = displayNumber.textContent.slice(0, -1);
-    console.log(displayNumber.textContent);
 }
 
 const add = (a, b) => {
