@@ -17,6 +17,12 @@ operatorButtons.forEach((btn) =>
 
 clearButton.addEventListener("click", clearDisplay);
 deleteButton.addEventListener("click", deleteNumber);
+decimalButton.addEventListener("click", appendDecimal);
+equalButton.addEventListener("click", () => {
+    displayNumber.textContent = displayNumber.textContent;
+    // Probably need to have/add another display
+    // Pressing this button displays a "new" number
+});
 
 // Functions
 function appendNumberScreen(number) {
@@ -32,6 +38,16 @@ function clearDisplay() {
 
 function deleteNumber() {
     displayNumber.textContent = displayNumber.textContent.slice(0, -1);
+    if (displayNumber.textContent.length === 0) {
+        clearDisplay(); // If all values are deleted, value is set to 0
+    }
+}
+
+function appendDecimal() {
+    if (displayNumber.textContent.includes(".")) {
+        return; // Prevents multiple being added
+    }
+    displayNumber.textContent += ".";
 }
 
 const add = (a, b) => {
