@@ -2,9 +2,11 @@
     --border: 1.5px solid black;
     --background: rgb(47, 79, 79);
     --calc-bg: rgb(96, 184, 184);
-    --display-bg: rgb(155, 151, 151);
+    --display-bg: rgb(199, 228, 228);
     --button-bg: rgb(199, 228, 228);
     --button-hover: rgb(153, 177, 177);
+    --display-input-size: 1.8rem;
+    --display-result-size: 2.3rem;
 }
 
 *,
@@ -35,12 +37,20 @@ body {
 
 .display {
     background-color: var(--display-bg);
+    border: var(--border);
+    height: 80px;
     text-align: end;
-    font-size: 2.5rem;
-    height: 50px;
     margin-bottom: 10px;
     padding-right: 0.5rem;
-    border: var(--border);
+}
+
+.input-display {
+    font-size: var(--display-input-size);
+    color: rgb(85, 85, 85);
+}
+
+.result-display {
+    font-size: var(--display-result-size);
 }
 
 .button-container {
