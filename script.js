@@ -14,17 +14,13 @@ numberButtons.forEach((btn) =>
 );
 
 operatorButtons.forEach((btn) =>
-    btn.addEventListener("click", () => console.log(btn.textContent))
+    btn.addEventListener("click", () => setOperation(btn.textContent))
 );
 
 clearButton.addEventListener("click", clearDisplay);
 deleteButton.addEventListener("click", deleteNumber);
 decimalButton.addEventListener("click", appendDecimal);
-equalButton.addEventListener("click", () => {
-    inputDisplayNumber.textContent = inputDisplayNumber.textContent;
-    // Probably need to have/add another display
-    // Pressing this button displays a "new" number
-});
+equalButton.addEventListener("click", evaluate);
 
 /* Functions */
 function appendNumberScreen(number) {
@@ -36,6 +32,7 @@ function appendNumberScreen(number) {
 
 function clearDisplay() {
     inputDisplayNumber.textContent = "0";
+    resultDisplayNumber.textContent = "";
 }
 
 function deleteNumber() {
@@ -53,6 +50,19 @@ function appendDecimal() {
         return; // Prevents multiple being added
     }
     inputDisplayNumber.textContent += ".";
+}
+
+function setOperation(operator) {
+    firstOperand = inputDisplayNumber.textContent;
+    currentOperator = operator;
+    inputDisplayNumber.textContent = `${firstOperand}${currentOperator}`;
+}
+
+function evaluate() {
+    // Find second operand: how?
+    secondOperand = inputDisplayNumber.textContent; // Is currently the entire textContext, not the last user input
+    // resultDisplayNumber.textContext = operate(currentOperator, firstOperand, secondOperand);
+    // operate("+", 7, 1), resultDisplayNumber.textContext should then just show 8
 }
 
 const add = (a, b) => {
