@@ -59,10 +59,15 @@ function setOperation(operator) {
 }
 
 function evaluate() {
-    // Find second operand: how?
-    secondOperand = inputDisplayNumber.textContent; // Is currently the entire textContext, not the last user input
-    // resultDisplayNumber.textContext = operate(currentOperator, firstOperand, secondOperand);
-    // operate("+", 7, 1), resultDisplayNumber.textContext should then just show 8
+    secondOperand = inputDisplayNumber.textContent.split("-");
+    secondOperand = secondOperand[1];
+    resultDisplayNumber.textContent = operate(
+        currentOperator,
+        firstOperand,
+        secondOperand
+    );
+    // Currently only works for -, escape needed for regex
+    // Evaulation doesn't work for multiple calcs (17-5-3, currently doesn't work)
 }
 
 const add = (a, b) => {
